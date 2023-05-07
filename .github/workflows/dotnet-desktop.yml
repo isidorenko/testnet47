@@ -79,7 +79,7 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.5
   
     - name: Restore Packages
-      run: nuget restore MySolution.sln
+      run: nuget restore $env:Solution_Name
 
     - name: Build solution
       run: msbuild $env:Solution_Name -t:rebuild -property:Configuration=Release
@@ -97,5 +97,5 @@ jobs:
     #  run: ./NUnit.ConsoleRunner.3.13.0/tools/nunit3-console.exe  path/to/test.dll
      
     # Execute all unit tests in the solution
-    #- name: Execute unit tests
-    #  run: dotnet test
+    - name: Execute unit tests
+      run: dotnet test
