@@ -11,7 +11,7 @@ namespace test47
         public void Test1()
         {
             var sum = Sum.Calculate(1, 2);
-            Assert.AreEqual(sum, 5);
+            Assert.AreEqual(sum, 3);
         }
 
     }
